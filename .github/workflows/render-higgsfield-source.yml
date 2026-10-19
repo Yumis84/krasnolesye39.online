@@ -1,6 +1,8 @@
 name: Render Higgsfield source clip (manual)
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
 jobs:
   render:
     runs-on: ubuntu-latest
