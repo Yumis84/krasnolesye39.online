@@ -1,0 +1,29 @@
+name: Render Higgsfield source clip (manual)
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Start local website
+        run: python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/krasnolesye-server.log 2>&1 &
+      - name: Render video from website source
+        run: node scripts/render-intro.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: krasnolesye-online-v4-higgsfield-source
+          path: outputs/higgsfield-source/krasnolesye-online-v4-source.mp4
+          if-no-files-found: error
+          retention-days: 7
