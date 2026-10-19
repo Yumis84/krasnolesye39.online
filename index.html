@@ -30,27 +30,12 @@ header{position:relative;z-index:6}.gate{background:linear-gradient(#0b211d55,#1
 @media(max-height:520px){.chapter .phrase{font-size:clamp(28px,5vw,46px)}.gate h1{font-size:40px}}
 </style>
 <noscript><style>#open,#sound,.gate-note{display:none}.gate{position:relative;order:2}.gate-inner{padding:40px 0}main,footer{display:none}</style></noscript>
-<style>
-/* V4 experiment: an atmospheric clock motif, isolated from the approved RU intro. */
-.timepiece{position:absolute;z-index:1;right:clamp(18px,6vw,110px);top:50%;width:clamp(140px,23vw,340px);aspect-ratio:1;transform:translateY(-50%);opacity:0;pointer-events:none;filter:drop-shadow(0 0 34px #d4bc8344);animation:clockReveal 10s ease-in-out both}
-.timepiece svg{width:100%;height:100%;overflow:visible}
-.timepiece .clock-face{fill:#102b2580;stroke:#d4bc83;stroke-width:2}
-.timepiece .clock-ring{fill:none;stroke:#d4bc8370;stroke-width:1}
-.timepiece .clock-mark{stroke:#e7d6ac;stroke-width:2;stroke-linecap:round}
-.timepiece .clock-hour{stroke:#f3eedb;stroke-width:4;stroke-linecap:round;transform-origin:100px 100px;animation:hourMove 10s ease-in-out both}
-.timepiece .clock-minute{stroke:#d4bc83;stroke-width:2.5;stroke-linecap:round;transform-origin:100px 100px;animation:minuteMove 10s ease-in-out both}
-.timepiece .clock-center{fill:#d4bc83}
-@keyframes clockReveal{0%,28%{opacity:0;transform:translate(16px,-48%) scale(.94)}42%,88%{opacity:.62;transform:translate(0,-50%) scale(1)}100%{opacity:.22;transform:translate(0,-50%) scale(1.03)}}
-@keyframes hourMove{from{transform:rotate(0deg)}to{transform:rotate(5deg)}}
-@keyframes minuteMove{from{transform:rotate(0deg)}to{transform:rotate(60deg)}}
-@media(max-width:600px){.timepiece{top:48%;right:50%;width:min(54vw,220px);transform:translate(50%,-50%);animation:clockRevealMobile 10s ease-in-out both}@keyframes clockRevealMobile{0%,28%{opacity:0;transform:translate(50%,-46%) scale(.94)}42%,88%{opacity:.22;transform:translate(50%,-50%) scale(1)}100%{opacity:.08;transform:translate(50%,-50%) scale(1.03)}}}
-@media(prefers-reduced-motion:reduce){.experience:not(.motion-enabled) .timepiece{animation:none;opacity:.12;transform:translateY(-50%)}.experience:not(.motion-enabled) .timepiece .clock-hour,.experience:not(.motion-enabled) .timepiece .clock-minute{animation:none}}
-</style>
+
 </head>
 <body>
 <div class="experience" id="experience">
 <div class="landscape" aria-hidden="true"><div class="forest"></div><div class="rays"></div><div class="fog"></div><svg class="near" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M85 1000 116 0h45l-14 1000ZM138 300 0 155v-30l140 124ZM145 440 285 219l9 13-151 265ZM1460 1000 1428 0h61l45 1000ZM1460 330 1600 138v50l-127 219ZM1446 202 1314 54l-13 8 145 204Z"/></svg><div class="shade"></div></div>
-<div class="timepiece" aria-hidden="true"><svg viewBox="0 0 200 200" focusable="false"><circle class="clock-face" cx="100" cy="100" r="92"/><circle class="clock-ring" cx="100" cy="100" r="84"/><g class="clock-mark"><path d="M100 17v11 M100 172v11 M17 100h11 M172 100h11 M59 29l5 9 M136 162l5 9 M29 59l9 5 M162 136l9 5 M141 29l-5 9 M64 162l-5 9 M171 59l-9 5 M38 136l-9 5"/></g><path class="clock-hour" d="M100 100V59"/><path class="clock-minute" d="M100 100V35"/><circle class="clock-center" cx="100" cy="100" r="5"/></svg></div>
+
 <div class="frame" aria-hidden="true"></div>
 <div class="gate" id="gate"><div class="gate-inner"><p class="gate-kicker">Краснолесье · Роминтская пуща</p><h1>Войти<br>в лес</h1><p class="gate-invitation">Ваше путешествие начинается здесь.</p><button class="open-button" id="open" type="button" aria-label="Вход — начать путешествие по Виштынецкому краю">Вход</button><span class="gate-note" id="gate-note">Десять секунд леса, света и звука.</span></div></div>
 <header><div class="brand"><img class="museum-logo" src="vishtynets-logo.svg?v=ebe40fd" alt="Виштынецкий экомузей. Краснолесье, Роминтская пуща" width="124" height="67"></div><div class="header-tools"><button class="sound" id="sound" type="button" aria-pressed="true">Звук включён</button><a class="skip" href="https://vishtynets.ru/"><span id="skip-label">Перейти на сайт</span> <span aria-hidden="true">↗</span></a></div></header>
